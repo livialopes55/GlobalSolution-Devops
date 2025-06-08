@@ -3,12 +3,12 @@
 
 Este repositório contém a versão containerizada da API Java `SafeWaterAPI` para entrega da disciplina DevOps.
 
-## 🚀 Componentes
+##  Componentes
 
 - Container da aplicação Java (Spring Boot)
 - Container do banco de dados PostgreSQL
 
-## ▶️ Como Executar
+## ▶Como Executar
 
 1. Clone o repositório:
 ```
@@ -34,7 +34,7 @@ docker logs -f safewater-api
 docker logs -f safewater-db
 ```
 
-## ✅ Requisitos Atendidos
+## Requisitos Atendidos
 
 - Dockerfile e docker-compose
 - Dois containers (API + banco)
