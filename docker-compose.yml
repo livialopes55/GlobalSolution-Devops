@@ -1,0 +1,31 @@
+
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: safewater-db
+    environment:
+      POSTGRES_DB: safewater
+      POSTGRES_USER: fiap
+      POSTGRES_PASSWORD: fiap123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+  api:
+    build: .
+    container_name: safewater-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/safewater
+      SPRING_DATASOURCE_USERNAME: fiap
+      SPRING_DATASOURCE_PASSWORD: fiap123
+    restart: always
+
+volumes:
+  pgdata:
